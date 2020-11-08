@@ -2,3 +2,45 @@ body{
     background-attachment: fixed;
     background: linear-gradient(90deg, rgba(203,242,17,1) 0%, rgba(0,212,255,1) 100%); 
 }
+
+.head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    color: rgba(203,242,17,1); 
+    font-family: "Overpass", monospace;
+    font-weight: 900;
+    width: 100vw;
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head__banner{
+    margin:15px 20px 10px 40px;
+    display: flex;
+    align-items: center;
+
+}
+.head__logo{
+    height: 50px;
+}
+
+.head__title{
+    display: inline-block;
+    margin: 2px 20px 0 10px; 
+}
+
+.head__list{
+    display: inline-block;
+}
+
+.head__item,.head__item a, .head__item:visited{
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    text-decoration: none;
+    color: rgba(0,212,255,1);
+}
