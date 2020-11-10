@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/caja.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>inventory app</title>
@@ -32,10 +33,10 @@
                 <img src="images/cajas.svg" alt="a column of boxes">
             </div>
         </section>
-        <div>
-            <section class="new">
+        <div class=container__products>
+            <section class="new" id="new">
                     <h2 class="new__title">New product</h2>
-                    <form class="new__form" onsubmit="addProduct(event)">
+                    <form class="new__form" onsubmit="addProduct(event)" id="newForm">
                         <input class="new__input" type="text" name="name" id="nameProduct" placeholder="Product name">
                         <input class="new__input" type="text" name="price" id="priceProduct" placeholder="Product price">
                         <input class="new__input" type="text" name="unit" id="unitProduct" placeholder="Product units">
@@ -43,9 +44,16 @@
                     </form>
                     <p class="new__feed" id="feedback">you have not entered any product</p>
             </section>
+            <section class="lastest" id="lastest">
+                <h2 class=lastest__title>last 5 products</h2>
+                <div class="lastest__content" id="lastestContent">
+                    <div class="lastest__empty">
+                        <p>the list of products is empty</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <section class="lastest"></section>
-        <section class="search"></section>
+        <section class="search" id="search"></section>
     </main>
     <script src="script.js"></script>
 </body>

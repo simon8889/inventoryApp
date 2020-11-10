@@ -76,6 +76,20 @@ body{
     flex-direction: column;
 }
 
+.container__products{
+    display: flex;
+}
+
+.lastest{
+    justify-self: center;
+    text-align: center;
+    width: 50%;
+}
+
+.lastest__title{
+    font-family: "Overpass",monospace;
+}
+
 .new__input{
     margin: 20px 10px 20px 10px;
     align-self: flex-end;
@@ -116,4 +130,37 @@ body{
 .new__submit:hover{
     font-size: 18px;
     height: 32px;
+}
+
+.lastest__empty{
+    font-size: 24px;
+    font-family: "Overpass", monospace;
+    font-weight: 400;
+}
+
+.lastest__card{
+    background-color: #000000;
+    height: 40px;
+    color: ​#00d4ff;
+    border-radius: 30px;
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+.lastest__list{
+    display: flex;
+    justify-content: space-around;
+    font-family: "Overpass", monospace;
+    font-weight: 400;
+    margin-right: 20px;
+    align-items: flex-end;
+}
+
+.lastest__item{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.lastest__card ul li{
+    color: #00d4ff;
 }
