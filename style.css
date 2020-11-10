@@ -191,3 +191,25 @@ body{
     font-family: "Overpass",monospace;
     text-align: center;
 }
+
+.reset__button, .eliminate__button{
+    background-color: #000000;
+    color: #00d4ff;
+    border-radius: 20px;
+    border-color: #000000;
+    height:40px;
+    width:40px;
+    font-size: 18px;
+    font-family: "Overpass",monospace;
+    font-weight: 900;
+    transition: all 0.5s ease;
+}
+
+.reset__button{
+    width: 100px;
+    margin-right: 20px;
+}
+
+.reset__button:hover, .eliminate__button:hover{
+    font-size: 25px;
+}

@@ -75,20 +75,49 @@ class inventary{
     }
     getAllProducts(){
         let toInsert=new String;
-        for (let i=0;i<this.list.length;i++){
-            toInsert+=this.list[i].productCard()
+        if (this.list.length !== 0){
+            for (let i=0;i<this.list.length;i++){
+                toInsert+=this.list[i].productCard()
+            }
+        }
+        else{
+            toInsert='<p class="search__result">you havent products in your inventory</p>'
         }
         return toInsert;
     }
-    
+    toEliminate(object){
+        this.list.splice(object,1);
+    }
+    getIndex(object){
+        return this.list.indexOf(object);
+    }
 }
 
 const principal=new inventary;
 
+function updatLists(){
+    document.getElementById("allItems").innerHTML=String(principal.getAllProducts());
+    let forDraw=document.getElementById("lastestContent");
+    forDraw.innerHTML=String(principal.cardLastest());
+}
+
+function resetSearch(){
+    let drawResult=document.getElementById("searchResult");
+    drawResult.innerHTML='<p class="search__result" id="searchResult">you have not looked for any product</p>';
+}
+
+function eliminateProduct(event,product){
+    event.preventDefault();
+    principal.toEliminate(product);
+    updatLists();
+    resetSearch()
+}
+
+
+
 
 function addProduct(event){
     event.preventDefault();
-    let forDraw=document.getElementById("lastestContent");
     let name=document.getElementById("nameProduct").value;
     let price=document.getElementById("priceProduct").value;
     let unit=document.getElementById("unitProduct").value;
@@ -96,8 +125,7 @@ function addProduct(event){
     if (validDatos(name,price,unit)){
         principal.newProduct(name,price,unit);
         feed.innerText=`you introduced the product ${name}`;
-        forDraw.innerHTML=String(principal.cardLastest());
-        document.getElementById("allItems").innerHTML=String(principal.getAllProducts());
+        updatLists();
     }
     else{
         feed.innerText="some product data is not valid";
@@ -105,6 +133,7 @@ function addProduct(event){
     document.getElementById("newForm").reset();
 }
 
+const completeCard = (object,toEliminate) => String(`<div class="complete__card">${String(object)}<button onclick="resetSearch()" class="reset__button">clear</button><button onclick="eliminateProduct(event,${toEliminate})" class="eliminate__button">x</button></div>`)
 
 function search(event){
     event.preventDefault();
@@ -112,7 +141,7 @@ function search(event){
     let drawResult=document.getElementById("searchResult");
     let foundOrNo=principal.searchProduct(toSearch);
     if (foundOrNo instanceof  product){
-        drawResult.innerHTML=foundOrNo.productCard();
+        drawResult.innerHTML=completeCard(foundOrNo.productCard(),principal.getIndex(foundOrNo));
     }
     else{
         drawResult.innerHTML=String(foundOrNo);
