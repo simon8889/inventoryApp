@@ -16,9 +16,9 @@
         <nav class="head__nav">
             <ul  class="head__list">
                 <li class="head__item"><a href="#home">🏠 home</a></li>
-                <li class="head__item"><a href="#">📍 new product</a></li>
-                <li class="head__item"><a href="#">📝 lastest products</a></li>
-                <li class="head__item"><a href="#">🔍 search product</a></li>
+                <li class="head__item"><a href="#new">📍 new product</a></li>
+                <li class="head__item"><a href="#lastest">📝 lastest products</a></li>
+                <li class="head__item"><a href="#search">🔍 search product</a></li>
             </ul>
         </nav>
     </header>
@@ -32,10 +32,22 @@
                 <img src="images/cajas.svg" alt="a column of boxes">
             </div>
         </section>
-        <section class="new"></section>
+        <div>
+            <section class="new">
+                    <h2 class="new__title">New product</h2>
+                    <form class="new__form" onsubmit="addProduct(event)">
+                        <input class="new__input" type="text" name="name" id="nameProduct" placeholder="Product name">
+                        <input class="new__input" type="text" name="price" id="priceProduct" placeholder="Product price">
+                        <input class="new__input" type="text" name="unit" id="unitProduct" placeholder="Product units">
+                        <input class="new__submit" type="submit" value="set product">
+                    </form>
+                    <p class="new__feed" id="feedback">you have not entered any product</p>
+            </section>
+        </div>
         <section class="lastest"></section>
         <section class="search"></section>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
+
