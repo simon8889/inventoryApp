@@ -183,3 +183,11 @@ body{
     font-family: "Overpass",monospace;
     font-weight: 400;
 }
+
+.all{
+    align-self: center;
+    margin-top: 30px;
+    color:#000000;
+    font-family: "Overpass",monospace;
+    text-align: center;
+}

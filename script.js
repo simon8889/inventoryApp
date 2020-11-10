@@ -73,6 +73,13 @@ class inventary{
             return '<p class="search__result">the data is invalid for search</p>';
         }
     }
+    getAllProducts(){
+        let toInsert=new String;
+        for (let i=0;i<this.list.length;i++){
+            toInsert+=this.list[i].productCard()
+        }
+        return toInsert;
+    }
     
 }
 
@@ -90,6 +97,7 @@ function addProduct(event){
         principal.newProduct(name,price,unit);
         feed.innerText=`you introduced the product ${name}`;
         forDraw.innerHTML=String(principal.cardLastest());
+        document.getElementById("allItems").innerHTML=String(principal.getAllProducts());
     }
     else{
         feed.innerText="some product data is not valid";
