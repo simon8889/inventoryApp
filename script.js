@@ -4,7 +4,7 @@ const validDatos= (name,price,unit) => (!(name.length === 0) && (verificarNums(p
 class product{
     constructor(name,price,unit){
         this.name=name;
-        this.price=name;
+        this.price=price;
         this.unit=unit;
     }
     productCard(){
