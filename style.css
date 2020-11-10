@@ -52,6 +52,8 @@ body{
 
 .container{
     margin: 90px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .home{
@@ -90,7 +92,7 @@ body{
     font-family: "Overpass",monospace;
 }
 
-.new__input{
+.new__input,.search__input{
     margin: 20px 10px 20px 10px;
     align-self: flex-end;
     width: 100%;
@@ -103,7 +105,7 @@ body{
     outline-style: none;
 }
 
-.new__submit{
+.new__submit,.search__submit{
     width:50%;
     outline-style: none;
     cursor: pointer;
@@ -116,18 +118,18 @@ body{
     transition: all 0.5s ease;
 }
 
-.new__input::placeholder{
+.new__input::placeholder, .search__input::placeholder{
     color: #ccf21160;
     padding-left: 15px;
 }
 
-.new__input:focus{
+.new__input:focus, .search__input:focus{
     border-bottom:5px ;
     border-style: solid;
     border-color: #cbf211;
 }
 
-.new__submit:hover{
+.new__submit:hover, .search__submit:hover{
     font-size: 18px;
     height: 32px;
 }
@@ -163,4 +165,21 @@ body{
 
 .lastest__card ul li{
     color: #00d4ff;
+}
+
+.search{
+    margin-top: 40px;
+    align-self: center;
+    width:40%;
+    text-align: center;
+}
+
+.search__title{
+    font-family: "Overpass",monospace;
+    font-weight: 900;
+}
+
+.search__result{
+    font-family: "Overpass",monospace;
+    font-weight: 400;
 }

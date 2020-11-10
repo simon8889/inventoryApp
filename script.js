@@ -60,6 +60,19 @@ class inventary{
             return totalDiv;
         }
     }
+    searchProduct(name){
+        if (name.length !== 0){
+            for (let i=0; i<this.list.length;i++){
+                if (this.list[i].name === name){
+                    return this.list[i];
+                }
+            }
+            return `<p class="search__result">the product ${name} was no found</p>`;
+        }
+        else{
+            return '<p class="search__result">the data is invalid for search</p>';
+        }
+    }
     
 }
 
@@ -81,6 +94,21 @@ function addProduct(event){
     else{
         feed.innerText="some product data is not valid";
     };
-    console.log("he hecho las confirmaciones")
     document.getElementById("newForm").reset();
 }
+
+
+function search(event){
+    event.preventDefault();
+    let toSearch=document.getElementById("toSearch").value;
+    let drawResult=document.getElementById("searchResult");
+    let foundOrNo=principal.searchProduct(toSearch);
+    if (foundOrNo instanceof  product){
+        drawResult.innerHTML=foundOrNo.productCard();
+    }
+    else{
+        drawResult.innerHTML=String(foundOrNo);
+    }
+    document.getElementById("searchForm").reset();
+}
+
