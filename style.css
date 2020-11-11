@@ -213,3 +213,44 @@ body{
 .reset__button:hover, .eliminate__button:hover{
     font-size: 25px;
 }
+
+@media screen and (max-width:400px){
+    body{
+        overflow-x: hidden;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .head{
+        flex-direction: column;
+    }
+    .container__products{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .head__title{
+        font-size: 12px;
+    }
+    .home img{
+        width: 200px;
+    }
+    .head__item span{
+        display: none;
+    }
+    .head__logo{
+        height: 20px;
+    }
+    .lastest, .new, .search{
+        width:80%;
+    }
+    .responsive__head{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 40px;
+    }
+    .head__item{
+        margin: 0;
+    }
+}
